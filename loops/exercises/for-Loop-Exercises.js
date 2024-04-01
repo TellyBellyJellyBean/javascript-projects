@@ -57,4 +57,4 @@ odds = []
 for (i = 0; i = array2.length; i ++){
   console.log(evens);
   console.log(odds);
-}
+} //NEED HELP
