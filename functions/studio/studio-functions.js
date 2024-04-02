@@ -3,7 +3,23 @@
 // Part One: Reverse Characters
 
 // 1. Define the function as reverseCharacters. Give it one parameter, which will be the string to reverse.
+function reverseCharacters(myVariableName) {
+    let reversedString = "";
+    if (typeof myVariableName === "number") {
+        myVariableName = String(myVariableName);
+        reversedString = myVariableName.split("").reverse().join("");
+        reversedString = Number(reversedString);
+        console.log(typeof reversedString)
+    }   else {
+        reversedString = myVariableName.split("").reverse().join("");
+    }
+
+
+    return reversedString;
+}
+console.log(reverseCharacters("ANY RANDOM STRING"));
 // 2. Within the function, split the string into an array, then reverse the array.
+
 // 3. Use join to create the reversed string and return that string from the function.
 // 4. Below the function, define and initialize a variable to hold a string.
 // 5. Use console.log(reverseCharacters(myVariableName)); to call the function and verify that it correctly reverses the characters in the string.
@@ -29,6 +45,14 @@
 let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
+function reverseArray(inputArray) {
+    let array = []
+    for (let i = 0; i < inputArray.length; i++) {
+        array.push(reverseCharacters(inputArray[i]))
+    }
+    return array.reverse()
+}
+console.log(reverseArray(arrayTest1));
 
 // Bonus Missions
 
@@ -36,16 +60,16 @@ let arrayTest3 = ['hello', 'world', 123, 'orange'];
 // 2. Retrieve only the last character from strings with lengths of 3 or less.
 // 3. Retrieve only the first 3 characters from strings with lengths larger than 3.
 // 4. Use a template literal to return the phrase We put the '___' in '___'. Fill the first blank with the modified string, and fill the second blank with the original string.
-
-// Test Function
-
-// 1. Outside of the function, define the variable str and initialize it with a string (e.g. 'Functions rock!').
-// 2. Call your function and print the returned phrase.
-
-// Area of rectangle equal to length x width
-
-// 1. Define a function with the required parameters to calculate the area of a rectangle.
-// 2. The function should return the area, NOT print it.
-// 3. Call your area function by passing in two arguments - the length and width.
-// 4. If only one argument is passed to the function, then the shape is a square. Modify your code to deal with this case.
-// 5. Use a template literal to print, “The area is ____ cm^2.”
+function funPhrase(string) {
+    let newString = "";
+    if (string.length <= 3) {
+        newString = string.slice(-1)
+    }   else {
+        newString = (string.slice(0, 3));
+    }
+    return (`We put the ${newString} in ${string}. COOOOL.`)
+    
+    //We put the fun in function.
+    //We put the t in put
+}
+console.log(funPhrase("ABCDEF"));
