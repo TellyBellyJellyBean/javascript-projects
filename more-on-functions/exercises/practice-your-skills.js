@@ -5,6 +5,21 @@ a) If passed a number, return the tripled value.
 b) If passed a string, return the string “ARRR!”
 c) Be sure to test your function before moving on the next part. 
 */
+let nums = [3, 10, 50]
+let tripledValue = function(nums) {
+    if (nums === "number") {
+    return n*3; 
+    }
+    else if (nums === "string") {
+        return "ARRRR";
+    }
+    else {
+        return nums;
+    }
+}
+
+
+console.log(tripledValue);
 
 /* Add to your code! Use your fuction and the map method to change an array  as follows:
 a) Triple any the numbers.
