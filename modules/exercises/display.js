@@ -1,14 +1,15 @@
 //TODO: Export ONLY the printAll function.
 
+
 function printAll(names, tests, scores){
   let header = 'Name';
   let row = '';
-
+  
   for (let i = 0; i<tests.length; i++){
     header += '\t'+tests[i];
   }
   console.log(header);
-
+  
   for (let name = 0; name<names.length; name++){
     row = names[name];
     for (let score = 0; score<scores[name].length;score++){
@@ -33,4 +34,8 @@ function printTestScores(index,test,students,scores){
     console.log(`${students[i]} = ${scores[i][index]}%.`);
   }
   return;
+}
+
+module.exports = {
+  printAll: printAll,
 }
